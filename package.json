@@ -59,7 +59,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node src/index.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm install && npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -82,5 +86,5 @@
   "devDependencies": {
     "terser-brunch": "^4.1.0"
   },
-  "proxy": "http://localhost:3000"
+  "proxy": "http://localhost:3000/"
 }
