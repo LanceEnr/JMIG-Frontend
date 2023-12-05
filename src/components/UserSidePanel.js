@@ -45,7 +45,9 @@ function SidePanel({ setActiveComponent }) {
   useEffect(() => {
     const storedUsername = localStorage.getItem("userName");
     axios
-      .get(`http://localhost:3001/get-counts?userName=${storedUsername}`)
+      .get(
+        `${process.env.REACT_APP_BACKEND_URL}/get-counts?userName=${storedUsername}`
+      )
       .then((response) => {
         setCounts(response.data);
 
@@ -67,7 +69,9 @@ function SidePanel({ setActiveComponent }) {
   useEffect(() => {
     const storedUsername = localStorage.getItem("userName");
     axios
-      .get(`http://localhost:3001/setuser?userName=${storedUsername}`)
+      .get(
+        `${process.env.REACT_APP_BACKEND_URL}/setuser?userName=${storedUsername}`
+      )
       .then((response) => {
         if (response.data.length > 0) {
           const user = response.data[0];

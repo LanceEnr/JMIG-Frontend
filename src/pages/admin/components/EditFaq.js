@@ -21,7 +21,9 @@ export default function EditFaq() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const response = await fetch(`http://localhost:3001/fetch-faq/${id}`);
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKEND_URL}/fetch-faq/${id}`
+        );
         if (response.ok) {
           const data = await response.json();
           setQuestion(data._question);

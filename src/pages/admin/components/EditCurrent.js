@@ -49,7 +49,7 @@ export default function EditCurrent() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/fetch-inventory/${id}`
+          `${process.env.REACT_APP_BACKEND_URL}/fetch-inventory/${id}`
         );
         setItem(response.data._itemName);
         setLocation(response.data._location);

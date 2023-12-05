@@ -102,7 +102,7 @@ export default function EditListing({ onBackClick }) {
       if (productName) {
         try {
           const response = await fetch(
-            `http://localhost:3001/get-listing-details?productName=${productName}`
+            `${process.env.REACT_APP_BACKEND_URL}/get-listing-details?productName=${productName}`
           );
           if (response.ok) {
             const data = await response.json();

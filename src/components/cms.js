@@ -4,7 +4,7 @@ import axios from "axios";
 export async function fetchBannerDataHome() {
   try {
     const response = await axios.get(
-      "http://localhost:3001/fetch-category-values/Homepage Full Banner"
+      `${process.env.REACT_APP_BACKEND_URL}/Homepage Full Banner`
     );
     return response.data;
   } catch (error) {
@@ -15,7 +15,7 @@ export async function fetchBannerDataHome() {
 export async function fetchBannerDataProduct() {
   try {
     const response = await axios.get(
-      "http://localhost:3001/fetch-category-values/Products Page"
+      `${process.env.REACT_APP_BACKEND_URL}/Products Page`
     );
     return response.data;
   } catch (error) {
@@ -26,7 +26,7 @@ export async function fetchBannerDataProduct() {
 export async function fetchProfilePic(_userName) {
   try {
     const response = await axios.get(
-      `http://localhost:3001/fetch-profile-pic/${_userName}`
+      `${process.env.REACT_APP_BACKEND_URL}/fetch-profile-pic/${_userName}`
     );
     return response.data;
   } catch (error) {
@@ -37,7 +37,7 @@ export async function fetchProfilePic(_userName) {
 export async function fetchProfilePic2(_userName) {
   try {
     const response = await axios.get(
-      `http://localhost:3001/fetch-profile-pic2/${_userName}`
+      `${process.env.REACT_APP_BACKEND_URL}/fetch-profile-pic2/${_userName}`
     );
     return response.data;
   } catch (error) {
@@ -49,7 +49,7 @@ export async function fetchProfilePic2(_userName) {
 export async function fetchTestimonialData() {
   try {
     const response = await axios.get(
-      "http://localhost:3001/fetch-testimonials"
+      `${process.env.REACT_APP_BACKEND_URL}/fetch-testimonials`
     );
     return response.data;
   } catch (error) {
@@ -59,7 +59,9 @@ export async function fetchTestimonialData() {
 }
 export async function fetchVisionData() {
   try {
-    const response = await axios.get("http://localhost:3001/fetch-vision");
+    const response = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/fetch-vision`
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching vision:", error);
@@ -69,7 +71,9 @@ export async function fetchVisionData() {
 
 export async function fetchMissionData() {
   try {
-    const response = await axios.get("http://localhost:3001/fetch-mission");
+    const response = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/fetch-mission`
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching mission:", error);
@@ -79,7 +83,9 @@ export async function fetchMissionData() {
 
 export async function fetchValuesData() {
   try {
-    const response = await axios.get("http://localhost:3001/fetch-values");
+    const response = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/fetch-values`
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching values:", error);
@@ -89,7 +95,9 @@ export async function fetchValuesData() {
 
 export async function fetchAboutData() {
   try {
-    const response = await axios.get("http://localhost:3001/fetch-about");
+    const response = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/fetch-about`
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching about:", error);
@@ -99,7 +107,9 @@ export async function fetchAboutData() {
 
 export async function fetchContactData() {
   try {
-    const response = await axios.get("http://localhost:3001/fetch-contact");
+    const response = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/fetch-contact`
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching contact:", error);
@@ -109,7 +119,7 @@ export async function fetchContactData() {
 export async function fetchBannerDataFAQ() {
   try {
     const response = await axios.get(
-      "http://localhost:3001/fetch-category-values/FAQS Page"
+      `${process.env.REACT_APP_BACKEND_URL}/FAQS Page`
     );
     return response.data;
   } catch (error) {
@@ -120,7 +130,9 @@ export async function fetchBannerDataFAQ() {
 
 const fetchFAQData = async () => {
   try {
-    const response = await axios.get("http://localhost:3001/get-faq");
+    const response = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/get-faq`
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching data:", error);

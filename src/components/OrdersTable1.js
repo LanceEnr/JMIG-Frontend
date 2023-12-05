@@ -300,7 +300,9 @@ export default function OrdersTable1(props) {
     const storedUsername = localStorage.getItem("userName");
     if (storedUsername) {
       axios
-        .get(`http://localhost:3001/order?userName=${storedUsername}`)
+        .get(
+          `${process.env.REACT_APP_BACKEND_URL}/order?userName=${storedUsername}`
+        )
         .then((response) => {
           setOrders(response.data);
         })

@@ -43,7 +43,7 @@ export default function EditOrder() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/fetch-order/${id}`
+          `${process.env.REACT_APP_BACKEND_URL}/fetch-order/${id}`
         );
         setName(response.data._name);
         setDetails(response.data._orderDet);

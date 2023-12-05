@@ -118,7 +118,7 @@ const fetchNotifications = async () => {
 
   try {
     const response = await axios.get(
-      `http://localhost:3001/fetch-notifications?userName=${storedUsername}`
+      `${process.env.REACT_APP_BACKEND_URL}/fetch-notifications?userName=${storedUsername}`
     );
 
     return response.data;

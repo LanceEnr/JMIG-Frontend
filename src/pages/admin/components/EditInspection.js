@@ -60,7 +60,7 @@ export default function EditInspection() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/fetch-inspections2/${uid}/${id}`
+          `${process.env.REACT_APP_BACKEND_URL}/fetch-inspections2/${uid}/${id}`
         );
         const originalDate = response.data.nextInspectionDate;
         const convertedDate = new Date(originalDate)

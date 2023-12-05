@@ -119,7 +119,7 @@ export default function TripVerification() {
       });
 
       const response = await axios.get(
-        `http://localhost:3001/fetch-documentCheckRecord/${id}/${driver}`
+        `${process.env.REACT_APP_BACKEND_URL}/fetch-documentCheckRecord/${id}/${driver}`
       );
       const checklistData = response.data;
 
@@ -148,7 +148,7 @@ export default function TripVerification() {
       });
 
       const response = await axios.get(
-        `http://localhost:3001/fetch-sCheckRecord/${id}/${driver}`
+        `${process.env.REACT_APP_BACKEND_URL}/fetch-sCheckRecord/${id}/${driver}`
       );
       const checklistData = response.data;
       setSafetyChecklistData((prevState) => ({
@@ -170,7 +170,7 @@ export default function TripVerification() {
   const fetchSignatureImage = async (id, driver) => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/fetch-signaturerecord/${id}/${driver}`
+        `${process.env.REACT_APP_BACKEND_URL}/fetch-signaturerecord/${id}/${driver}`
       );
       return response.data;
     } catch (error) {

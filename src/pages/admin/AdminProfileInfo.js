@@ -99,7 +99,9 @@ export default function AdminProfileInfo(props) {
   useEffect(() => {
     const storedUsername = localStorage.getItem("adminUsername");
     axios
-      .get(`http://localhost:3001/setuser2?userName=${storedUsername}`)
+      .get(
+        `${process.env.REACT_APP_BACKEND_URL}/setuser2?userName=${storedUsername}`
+      )
       .then((response) => {
         if (response.data.length > 0) {
           const user = response.data[0];

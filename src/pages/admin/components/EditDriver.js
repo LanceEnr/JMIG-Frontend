@@ -29,7 +29,7 @@ export default function EditDriver() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/fetch-driver2/${id}`
+          `${process.env.REACT_APP_BACKEND_URL}/fetch-driver2/${id}`
         );
         const originalDate = response.data.date;
         const convertedDate = new Date(originalDate)

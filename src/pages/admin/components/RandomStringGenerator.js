@@ -110,7 +110,7 @@ export default function RandomStringGenerator() {
   const handleDeleteRow = async (adminCode) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3001/accessCodes/${adminCode}`
+        `${process.env.REACT_APP_BACKEND_URL}/accessCodes/${adminCode}`
       );
       if (response.status === 204) {
         setRows((prevRows) =>

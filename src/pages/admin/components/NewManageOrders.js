@@ -132,7 +132,7 @@ export default function NewManageOrders() {
     try {
       const _orderNum = id;
       const response = await axios.post(
-        `http://localhost:3001/deleteOrder/${_orderNum}`
+        `${process.env.REACT_APP_BACKEND_URL}/deleteOrder/${_orderNum}`
       );
 
       if (response.status === 200) {

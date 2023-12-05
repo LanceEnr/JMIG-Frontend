@@ -43,7 +43,7 @@ export default function EditMaintenanceRecord() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/fetch-maintenanceHistory2/${uid}/${id}`
+          `${process.env.REACT_APP_BACKEND_URL}/fetch-maintenanceHistory2/${uid}/${id}`
         );
         setService(response.data.service);
         setPlateNo(response.data.plateNo);

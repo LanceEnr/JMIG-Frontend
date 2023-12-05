@@ -43,7 +43,7 @@ export default function EditFleet() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/fetch-trucks2/${id}`
+          `${process.env.REACT_APP_BACKEND_URL}/fetch-trucks2/${id}`
         );
 
         setbodyNo(response.data.bodyNo);

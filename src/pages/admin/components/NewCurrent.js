@@ -184,7 +184,7 @@ export default function NewCurrent() {
     try {
       const _inventoryID = id;
       const response = await axios.post(
-        `http://localhost:3001/deleteInventory/${_inventoryID}`
+        `${process.env.REACT_APP_BACKEND_URL}/deleteInventory/${_inventoryID}`
       );
 
       if (response.status === 200) {

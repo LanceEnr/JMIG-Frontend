@@ -32,7 +32,7 @@ export default function EditBanners() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/fetch-category-values/${category}`
+          `${process.env.REACT_APP_BACKEND_URL}/fetch-category-values/${category}`
         );
 
         setHeading(response.data._heading);

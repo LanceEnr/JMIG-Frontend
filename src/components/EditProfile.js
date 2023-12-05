@@ -61,7 +61,7 @@ export default function ProfileInfo(props) {
 
     try {
       const response = await axios.put(
-        "http://localhost:3001/update-user-profilepic",
+        `${process.env.REACT_APP_BACKEND_URL}/update-user-profilepic`,
         formData
       );
 
@@ -90,7 +90,9 @@ export default function ProfileInfo(props) {
   useEffect(() => {
     const storedUsername = localStorage.getItem("userName");
     axios
-      .get(`http://localhost:3001/setuser?userName=${storedUsername}`)
+      .get(
+        `${process.env.REACT_APP_BACKEND_URL}/setuser?userName=${storedUsername}`
+      )
       .then((response) => {
         if (response.data.length > 0) {
           const user = response.data[0];
@@ -185,7 +187,7 @@ export default function ProfileInfo(props) {
     }
 
     axios
-      .post("http://localhost:3001/updatephoneaddress", {
+      .post(`${process.env.REACT_APP_BACKEND_URL}/updatephoneaddress`, {
         userName,
         phone: Phone,
         address: Address,

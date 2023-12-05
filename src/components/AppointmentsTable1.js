@@ -131,7 +131,7 @@ export default function AppointmentsTable1(props) {
   const formattedDate = currentDate.toLocaleString("en-US", options);
   const handleCancel = async (appointmentNum) => {
     axios
-      .post("http://localhost:3001/cancel-appointment", {
+      .post(`${process.env.REACT_APP_BACKEND_URL}/cancel-appointment`, {
         _appointmentNum: appointmentNum,
         _status: "Cancelled",
         _date: formattedDate,
@@ -163,7 +163,9 @@ export default function AppointmentsTable1(props) {
     const storedUsername = localStorage.getItem("userName");
     if (storedUsername) {
       axios
-        .get(`http://localhost:3001/appointment?userName=${storedUsername}`)
+        .get(
+          `${process.env.REACT_APP_BACKEND_URL}/appointment?userName=${storedUsername}`
+        )
         .then((response) => {
           setAppointments(response.data);
         })

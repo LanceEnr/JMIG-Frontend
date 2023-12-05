@@ -122,7 +122,7 @@ export default function NewFaqTable() {
       const _faqNum = parseInt(id, 10);
 
       const response = await axios.post(
-        `http://localhost:3001/deleteFAQ/${_faqNum}`
+        `${process.env.REACT_APP_BACKEND_URL}/deleteFAQ/${_faqNum}`
       );
 
       if (response.status === 200) {
