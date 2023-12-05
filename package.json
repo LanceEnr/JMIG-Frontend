@@ -88,5 +88,5 @@
   "devDependencies": {
     "terser-brunch": "^4.1.0"
   },
-  "proxy": "http://localhost:3000/"
+  "proxy": "https://jmig-frontend-d541178d8614.herokuapp.com/"
 }
