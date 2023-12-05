@@ -61,6 +61,7 @@
   "scripts": {
     "start": "react-scripts start --host 0.0.0.0",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm install && npm run build"
